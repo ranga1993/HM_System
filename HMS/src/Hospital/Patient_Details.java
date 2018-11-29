@@ -71,15 +71,23 @@ public class Patient_Details extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         saveButton = new javax.swing.JLabel();
         clearButton = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jTabbedPane7 = new javax.swing.JTabbedPane();
-        jTabbedPane8 = new javax.swing.JTabbedPane();
+        radioMale = new javax.swing.JRadioButton();
+        radioFemale = new javax.swing.JRadioButton();
+        radioMarried = new javax.swing.JRadioButton();
+        radioUnmarried = new javax.swing.JRadioButton();
+        radioIndoor = new javax.swing.JRadioButton();
+        radioOutdoor = new javax.swing.JRadioButton();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        txtSearch = new javax.swing.JTextField();
+        saveButton1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        patientTable = new javax.swing.JTable();
+        jPanel9 = new javax.swing.JPanel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -229,23 +237,53 @@ public class Patient_Details extends javax.swing.JFrame {
             }
         });
 
-        gender_buttons.add(jRadioButton1);
-        jRadioButton1.setText("Male");
+        gender_buttons.add(radioMale);
+        radioMale.setText("Male");
+        radioMale.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioMaleActionPerformed(evt);
+            }
+        });
 
-        gender_buttons.add(jRadioButton2);
-        jRadioButton2.setText("Female");
+        gender_buttons.add(radioFemale);
+        radioFemale.setText("Female");
+        radioFemale.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioFemaleActionPerformed(evt);
+            }
+        });
 
-        maritial_buttons.add(jRadioButton3);
-        jRadioButton3.setText("Married");
+        maritial_buttons.add(radioMarried);
+        radioMarried.setText("Married");
+        radioMarried.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioMarriedActionPerformed(evt);
+            }
+        });
 
-        maritial_buttons.add(jRadioButton4);
-        jRadioButton4.setText("Unmarried");
+        maritial_buttons.add(radioUnmarried);
+        radioUnmarried.setText("Unmarried");
+        radioUnmarried.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioUnmarriedActionPerformed(evt);
+            }
+        });
 
-        patient_type_buttons.add(jRadioButton5);
-        jRadioButton5.setText("Indoor");
+        patient_type_buttons.add(radioIndoor);
+        radioIndoor.setText("Indoor");
+        radioIndoor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioIndoorActionPerformed(evt);
+            }
+        });
 
-        patient_type_buttons.add(jRadioButton6);
-        jRadioButton6.setText("Outdoor");
+        patient_type_buttons.add(radioOutdoor);
+        radioOutdoor.setText("Outdoor");
+        radioOutdoor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioOutdoorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -277,9 +315,9 @@ public class Patient_Details extends javax.swing.JFrame {
                                                 .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGroup(jPanel4Layout.createSequentialGroup()
                                                     .addGap(1, 1, 1)
-                                                    .addComponent(jRadioButton3)
+                                                    .addComponent(radioMarried)
                                                     .addGap(18, 18, 18)
-                                                    .addComponent(jRadioButton4)))
+                                                    .addComponent(radioUnmarried)))
                                             .addGap(101, 101, 101)
                                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -290,9 +328,9 @@ public class Patient_Details extends javax.swing.JFrame {
                                                 .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGroup(jPanel4Layout.createSequentialGroup()
-                                                    .addComponent(jRadioButton1)
+                                                    .addComponent(radioMale)
                                                     .addGap(18, 18, 18)
-                                                    .addComponent(jRadioButton2))))))))
+                                                    .addComponent(radioFemale))))))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(91, 91, 91))
@@ -301,9 +339,9 @@ public class Patient_Details extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton5)
+                                .addComponent(radioIndoor)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton6))
+                                .addComponent(radioOutdoor))
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel4Layout.createSequentialGroup()
                                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -354,15 +392,15 @@ public class Patient_Details extends javax.swing.JFrame {
                             .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9)
                             .addComponent(jLabel13)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2))
+                            .addComponent(radioMale)
+                            .addComponent(radioFemale))
                         .addGap(34, 34, 34)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
                             .addComponent(jLabel14)
                             .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton4))
+                            .addComponent(radioMarried)
+                            .addComponent(radioUnmarried))
                         .addGap(40, 40, 40)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
@@ -378,8 +416,8 @@ public class Patient_Details extends javax.swing.JFrame {
                             .addComponent(jLabel17)
                             .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton5)
-                            .addComponent(jRadioButton6))
+                            .addComponent(radioIndoor)
+                            .addComponent(radioOutdoor))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel18)
                         .addGap(18, 18, 18)
@@ -395,9 +433,128 @@ public class Patient_Details extends javax.swing.JFrame {
         jPanel4.setBounds(80, 80, 1250, 570);
 
         jTabbedPane2.addTab("Add Patient", jPanel2);
-        jTabbedPane2.addTab("Update Patient", jTabbedPane1);
-        jTabbedPane2.addTab("View patient", jTabbedPane7);
-        jTabbedPane2.addTab("Delete Patient", jTabbedPane8);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1365, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 672, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Update Patient", jPanel7);
+
+        jPanel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel8MouseClicked(evt);
+            }
+        });
+        jPanel8.setLayout(null);
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Hospital/patient.png"))); // NOI18N
+        jPanel8.add(jLabel6);
+        jLabel6.setBounds(30, 10, 64, 64);
+
+        jPanel10.setBackground(new java.awt.Color(4, 175, 240));
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("View Patient");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1085, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(47, 47, 47))
+        );
+
+        jPanel8.add(jPanel10);
+        jPanel10.setBounds(70, 10, 1270, 49);
+
+        saveButton1.setBackground(new java.awt.Color(4, 175, 240));
+        saveButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        saveButton1.setForeground(new java.awt.Color(255, 255, 255));
+        saveButton1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        saveButton1.setText("Search");
+        saveButton1.setOpaque(true);
+        saveButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                saveButton1MouseClicked(evt);
+            }
+        });
+
+        patientTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Patient Id", "First Name", "Last Name", "Age", "Gender", "Maritial Status", "Date", "Address", "City", "Phone No.", "Patient type", "Ward No.", "Bed No."
+            }
+        ));
+        jScrollPane1.setViewportView(patientTable);
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65)
+                        .addComponent(saveButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1218, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(saveButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(73, Short.MAX_VALUE))
+        );
+
+        jPanel8.add(jPanel11);
+        jPanel11.setBounds(80, 80, 1260, 570);
+
+        jTabbedPane2.addTab("View Patient", jPanel8);
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1365, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 672, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Delete Patient", jPanel9);
 
         getContentPane().add(jTabbedPane2);
         jTabbedPane2.setBounds(0, 0, 1370, 700);
@@ -405,6 +562,34 @@ public class Patient_Details extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void radioOutdoorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioOutdoorActionPerformed
+        type = "Outdoor";
+    }//GEN-LAST:event_radioOutdoorActionPerformed
+
+    private void radioIndoorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioIndoorActionPerformed
+        type = "Indoor";
+    }//GEN-LAST:event_radioIndoorActionPerformed
+
+    private void radioUnmarriedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioUnmarriedActionPerformed
+        maritial = "Unmarried";
+    }//GEN-LAST:event_radioUnmarriedActionPerformed
+
+    private void radioMarriedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioMarriedActionPerformed
+        maritial = "Married";
+    }//GEN-LAST:event_radioMarriedActionPerformed
+
+    private void radioFemaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioFemaleActionPerformed
+        gender = "Female";
+    }//GEN-LAST:event_radioFemaleActionPerformed
+
+    private void radioMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioMaleActionPerformed
+        gender = "Male";
+    }//GEN-LAST:event_radioMaleActionPerformed
+
+    private void clearButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clearButtonMouseClicked
 
     private void saveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseClicked
         conn = DB_connection.connect();
@@ -414,32 +599,44 @@ public class Patient_Details extends javax.swing.JFrame {
             pst.setString(1, txtPatientId.getText());
             pst.setString(2, txtFirstName.getText());
             pst.setString(3, txtLastName.getText());
-//            pst.setString(4, txtAge.getText());
-//            String gender = comboGender.getSelectedItem().toString();
-//            pst.setString(5, gender);
-//            String maritial = comboMaritial.getSelectedItem().toString();
-//            pst.setString(6, maritial);
+            pst.setString(4, txtAge.getText());
+            //            String gender = comboGender.getSelectedItem().toString();
+            //            pst.setString(5, gender);
+            //            String maritial = comboMaritial.getSelectedItem().toString();
+            //            pst.setString(6, maritial);
+            pst.setString(5, gender);
+            pst.setString(6, maritial);
             pst.setString(7, txtDate.getText());
             pst.setString(8, txtAddress.getText());
             pst.setString(9, txtCity.getText());
             pst.setString(10, txtPhone.getText());
-//            String type = comboPatientType.getSelectedItem().toString();
-//            pst.setString(11, type);
+            //            String type = comboPatientType.getSelectedItem().toString();
+            pst.setString(11, type);
             pst.setString(12, txtWard.getText());
             pst.setString(13, txtBed.getText());
-            
+
             pst.execute();
-            
+
             JOptionPane.showMessageDialog(null, "Data Successfully Added!");
-            
+
         } catch (SQLException | HeadlessException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
     }//GEN-LAST:event_saveButtonMouseClicked
 
-    private void clearButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearButtonMouseClicked
+    private void saveButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButton1MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_clearButtonMouseClicked
+    }//GEN-LAST:event_saveButton1MouseClicked
+
+    private void jPanel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseClicked
+        conn = DB_connection.connect();
+        String query = "select * from patient";
+        try{
+            pst = conn.prepareStatement(query);
+            rs = pst.executeQuery();
+            DefaultTableModel tm = (DefaulTableModel)patientTable.getModel();
+        }
+    }//GEN-LAST:event_jPanel8MouseClicked
 
     /**
      * @param args the command line arguments
@@ -494,26 +691,33 @@ public class Patient_Details extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTabbedPane jTabbedPane7;
-    private javax.swing.JTabbedPane jTabbedPane8;
     private javax.swing.ButtonGroup maritial_buttons;
+    private javax.swing.JTable patientTable;
     private javax.swing.ButtonGroup patient_type_buttons;
+    private javax.swing.JRadioButton radioFemale;
+    private javax.swing.JRadioButton radioIndoor;
+    private javax.swing.JRadioButton radioMale;
+    private javax.swing.JRadioButton radioMarried;
+    private javax.swing.JRadioButton radioOutdoor;
+    private javax.swing.JRadioButton radioUnmarried;
     private javax.swing.JLabel saveButton;
+    private javax.swing.JLabel saveButton1;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtBed;
@@ -523,6 +727,11 @@ public class Patient_Details extends javax.swing.JFrame {
     private javax.swing.JTextField txtLastName;
     private javax.swing.JTextField txtPatientId;
     private javax.swing.JTextField txtPhone;
+    private javax.swing.JTextField txtSearch;
     private javax.swing.JTextField txtWard;
     // End of variables declaration//GEN-END:variables
+    
+    private String gender;
+    private String maritial;
+    private String type;
 }
